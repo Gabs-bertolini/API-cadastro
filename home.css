@@ -2,23 +2,46 @@ body {
     margin: 0;
     display: flex;            
     flex-direction: column;
-    background-color: #0FC2C0;
-    min-height: 100vh;        
+    min-height: 100vh;      
 }
 
+.body-p
+{
+    text-align: center;
+    margin: 100px;
+    color: aliceblue;
+    font-size: 30px;
+}
+
+
+.img-sobre {
+    display: flex;
+    align-items: center;  
+    justify-content: center;  
+    object-fit: cover;  
+    width: 100%;  
+    height: 100%;  
+}
+
+    
+
+.colorbg{
+    background-color: #040200;
+}
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    background-color: #008F8C;
+    background: #653815;
+    background: linear-gradient(90deg,rgba(101, 56, 21, 1) 0%, rgba(189, 103, 7, 1) 50%, rgba(249, 192, 67, 1) 100%);
     margin: 10px;
     border-radius: 10px;
 }
 
 .header-container {
     display: flex;
-    gap: 20px; 
+    gap: 20px;
 }
 
 .header-container p {
@@ -29,26 +52,42 @@ header {
 
 .header-container a {
     text-decoration: none;
-    background-color: #023535;
+    background-color: #27170d;
     color: white;
     padding: 10px 20px;
     border-radius: 5px;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
 }
 
-.header-container-p a:hover {
-    background-color: #45a049;
+.header-container a:hover {
+    background-color: #040200;
 }
+
+
 
 footer {
-    position: fixed;
-    bottom: 0;
-    left: -10;
-    width: 99%;
-    background-color: #008F8C;
+    bottom: 0;  /* Pode ser removido, já que o position não é fixed */
+    left: 0;    /* Pode ser ajustado para 0 */
+    width: 100%; /* Use 100% para garantir que o footer ocupe toda a largura */
+    background: #653815;
+    background: linear-gradient(90deg, rgba(101, 56, 21, 1) 0%, rgba(189, 103, 7, 1) 50%, rgba(249, 192, 67, 1) 100%);
     text-align: center;
     padding: 15px;
     margin: 10px;
     border-radius: 10px;
+    position: relative; /* Remove o "fixed" e usa "relative" para comportamento normal */
+}
+
+.mb-4 
+{
+    background: #653815;
+    background: linear-gradient(90deg,rgba(101, 56, 21, 1) 0%, rgba(189, 103, 7, 1) 50%, rgba(249, 192, 67, 1) 100%);
+    border-radius: 10px;
+}
+
+.btn-btn-primary
+{
+    
+    border-radius: 10px;
+    padding: 15px;
+    background-color:  	#f9c043;
 }
