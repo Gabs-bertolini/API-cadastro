@@ -8,7 +8,7 @@ const cepValido = (cep) => cep.length == 8 && eNumero(cep);
 const pesquisarCep = async() => {
     limparFormulario();
 
-    const url = 'http://viacep.com.br/ws/${cep.value}/json/';
+    const url = `http://viacep.com.br/ws/${cep.value}/json/`;
 
     if(cepValido(cep.value)){
         const dados = await fetch (url);
@@ -19,15 +19,25 @@ const pesquisarCep = async() => {
         } else{
             preencherFormulario(adress);
         }
+    } else{
+        alert("cep Incorreto, tente novamente");
     }
 }
 
-preencherFormulario = (endereco) => {
+const preencherFormulario = (endereco) => {
+
+    document.getElementById('rua').value = endereco.logradouro;
+    document.getElementById('cep').value = endereco.cep;
+    document.getElementById('bairro').value = endereco.bairro;
+    //document.getElementById('cidade').value = cidade.localidade;      
     
 }
 
-limparFormulario = () => {
+const limparFormulario = () => {
     document.getElementById('rua').value = '';
     document.getElementById('numero').value = '';
     document.getElementById('bairro').value = '';
+    //document.getElementById('cidade').value = '';
 }
+
+document.getElementById('cep').addEventListener('focusout', pesquisarCep);
